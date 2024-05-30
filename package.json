@@ -1,6 +1,6 @@
 {
   "name": "osstrack",
-  "version": "0.1.0",
+  "version": "0.1.1-dev0",
   "description": "GitHub Action to upload dependencies to osstrack.io",
   "main": "index.js",
   "repository": {

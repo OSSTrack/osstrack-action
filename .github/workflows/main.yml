@@ -7,7 +7,7 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  test-inject-dependencies:
+  test-build:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -16,6 +16,9 @@ jobs:
 
       - name: Python3 version
         run: python3 --version
+
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Build python package
         run: |
