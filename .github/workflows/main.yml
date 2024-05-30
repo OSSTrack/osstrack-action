@@ -1,0 +1,26 @@
+---
+
+name: Test pipeline
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  test-inject-dependencies:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    steps:
+
+      - name: Python3 version
+        run: python3 --version
+
+      - name: Build python package
+        run: |
+          set -xe
+          pip3 install setuptools wheel
+          python3 setup.py sdist bdist_wheel
+
+...
